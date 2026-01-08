@@ -1,7 +1,9 @@
 #!/usr/bin/env node
-import * as cdk from 'aws-cdk-lib';
-import { CdkStarterStack } from '../lib/cdk-starter-stack';
-import { PhotosStack } from '../lib/photosStack';
+import * as cdk from "aws-cdk-lib";
+import { CdkStarterStack } from "../lib/cdk-starter-stack";
+import { PhotosStack } from "../lib/PhotosStack";
+import { PhotoHandlerStack } from "../lib/PhotoHandlerStack";
+import { BucketTagger } from "./Tagger";
 
 const app = new cdk.App();
 // new CdkStarterStack(app, 'CdkStarterStack', {
@@ -19,4 +21,11 @@ const app = new cdk.App();
 
 //   /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
 // });
-new PhotosStack(app, 'Photosstack');
+const photosStack = new PhotosStack(app, "Photosstack");
+new PhotoHandlerStack(app, "PhotoHandlerStack", {
+  targetBucketArn: photosStack.photosBucketArn,
+});
+
+const tagger = new BucketTagger("level", "test");
+
+cdk.Aspects.of(app).add(tagger);
