@@ -19,3 +19,5 @@ export class ApiStack extends Stack {
 // Make get request to lambda using curl
 
 //  curl https://lbbpkfabx8.execute-api.eu-west-1.amazonaws.com/prod/spaces
+
+//  curl https://2m5i6r96hg.execute-api.eu-west-1.amazonaws.com/prod/spaces
