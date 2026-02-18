@@ -17,3 +17,17 @@ npm i -D typescript ts-node
 npm i -D @types/node
 
 ### Deploying Cloud Formation Stack
+
+
+### Dependency Management
+
+            Application
+    App Code            Dependencies() node modules
+                    Others                        AWS SDK
+
+### AWS SDK
+ - Helps us access other AWS resources from our account
+
+ - Library that assists accessing AWS resources
+ - JS SDK in the past : Monolith
+        - Install npm i @aws-sdk/client-s3
