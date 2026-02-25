@@ -5,10 +5,7 @@ process.env.TABLE_NAME = "SpaceStack-06d1a6d078e1";
 
 handler(
   {
-    httpMethod: "POST",
-    body: JSON.stringify({
-      location: "London",
-    }),
+    httpMethod: "GET",
   } as any,
   {} as any,
 );
