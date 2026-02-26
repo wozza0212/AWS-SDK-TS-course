@@ -6,4 +6,4 @@
     - Ideal for Document and Key Value models
     - Handles simple queries
 
-    
+    unmarshall doesn't work with arrays
