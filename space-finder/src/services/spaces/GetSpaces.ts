@@ -3,6 +3,7 @@ import {
   GetItemCommand,
   ScanCommand,
 } from "@aws-sdk/client-dynamodb";
+import { unmarshall } from "@aws-sdk/util-dynamodb";
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
 
 const getSpaces = async (
@@ -21,31 +22,28 @@ const getSpaces = async (
         }),
       );
       if (getItemResponse.Item) {
+        const unmarshalledItem = unmarshall(getItemResponse.Item);
         return {
           statusCode: 200,
-          body: JSON.stringify(getItemResponse.Item),
+          body: JSON.stringify(unmarshalledItem),
         };
       } else {
         return {
           statusCode: 401,
-        body: JSON.stringify(`Item with spaceId ${spaceID} not Found`),
-
-        }
+          body: JSON.stringify(`Item with spaceId ${spaceID} not Found`),
+        };
       }
     } else {
-      return {
-        statusCode: 401,
-        body: JSON.stringify("ID Required"),
-      };
+      const result = await ddbClient.send(
+        new ScanCommand({
+          TableName: process.env.TABLE_NAME,
+        }),
+      );
+      const unmarshalledItems = result.Items.map((item) => unmarshall(item));
+      console.log(unmarshalledItems);
+      return { statusCode: 201, body: JSON.stringify(unmarshalledItems) };
     }
   }
-  const result = await ddbClient.send(
-    new ScanCommand({
-      TableName: process.env.TABLE_NAME,
-    }),
-  );
-  console.log(result.Items);
-  return { statusCode: 201, body: JSON.stringify(result.Items) };
 };
 
 export default getSpaces;

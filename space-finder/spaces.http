@@ -1,9 +1,10 @@
-POST https://4h4v50cyyd.execute-api.eu-west-1.amazonaws.com/prod/spaces
-Content-Type: : application/json
+# POST https://6c8qgv82l1.execute-api.eu-west-1.amazonaws.com/prod/spaces
+# Content-Type: : application/json
 
-    {
-        "location": "Dublin"
-    }
+#     {
+#         "location": "germany"
+#     }
 
 
-GET POST https://4h4v50cyyd.execute-api.eu-west-1.amazonaws.com/prod/spaces
+
+GET https://6c8qgv82l1.execute-api.eu-west-1.amazonaws.com/prod/spaces

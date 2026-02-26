@@ -7,11 +7,19 @@ handler(
   {
     httpMethod: "GET",
     queryStringParameters: {
-      id: "45644af3-63a5-49ef-b35c-875b719ea87d",
+      id: "86c981dc-a67b-41ad-a3ba-996d83680257"
     },
   } as any,
   {} as any,
 );
 
+// handler(
+//   {
+//     httpMethod: "GET",
+//     queryStringParameters: {
+//     },
+//   } as any,
+//   {} as any,
+// );
 
 //  ts-node test/launcher.ts
