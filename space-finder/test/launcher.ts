@@ -13,11 +13,24 @@ process.env.TABLE_NAME = "SpaceStack-06d1a6d078e1";
 //   {} as any,
 // );
 
+// handler(
+//   {
+//     httpMethod: "GET",
+//     queryStringParameters: {
+//     },
+//   } as any,
+//   {} as any,
+// );
+
 handler(
   {
-    httpMethod: "GET",
+    httpMethod: "PUT",
     queryStringParameters: {
+      id: "86c981dc-a67b-41ad-a3ba-996d83680257"
     },
+    body: JSON.stringify({
+      location: 'Dublin Updated'
+    })
   } as any,
   {} as any,
 );
