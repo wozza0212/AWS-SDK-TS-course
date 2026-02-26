@@ -7,4 +7,5 @@
 
 
 
-GET https://6c8qgv82l1.execute-api.eu-west-1.amazonaws.com/prod/spaces
+GET https://6c8qgv82l1.execute-api.eu-west-1.amazonaws.com/prod/spaces/?k
+Content-Type: : application/json
