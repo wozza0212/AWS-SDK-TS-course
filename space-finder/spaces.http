@@ -1,11 +1,21 @@
-# POST https://6c8qgv82l1.execute-api.eu-west-1.amazonaws.com/prod/spaces
-# Content-Type: : application/json
+POST https://6c8qgv82l1.execute-api.eu-west-1.amazonaws.com/prod/spaces
+Content-Type: : application/json
 
-#     {
-#         "location": "germany"
-#     }
+    {
+        "location": "germany"
+    }
+
+###
 
 
+GET https://6c8qgv82l1.execute-api.eu-west-1.amazonaws.com/prod/spaces?i
 
-GET https://6c8qgv82l1.execute-api.eu-west-1.amazonaws.com/prod/spaces/?k
+###
+
+
+GET https://6c8qgv82l1.execute-api.eu-west-1.amazonaws.com/prod/spaces?id=86c981dc-a67b-41ad-a3ba-996d83680257
+
+###
+
+PUT https://6c8qgv82l1.execute-api.eu-west-1.amazonaws.com/prod/spaces
 Content-Type: : application/json
