@@ -1,4 +1,4 @@
-POST https://6c8qgv82l1.execute-api.eu-west-1.amazonaws.com/prod/spaces
+POST https://gxo3wb7885.execute-api.eu-west-1.amazonaws.com/prod/spaces
 Content-Type: : application/json
 
     {
@@ -8,14 +8,21 @@ Content-Type: : application/json
 ###
 
 
-GET https://6c8qgv82l1.execute-api.eu-west-1.amazonaws.com/prod/spaces?i
+GET https://gxo3wb7885.execute-api.eu-west-1.amazonaws.com/prod/spaces?i
 
 ###
 
 
-GET https://6c8qgv82l1.execute-api.eu-west-1.amazonaws.com/prod/spaces?id=86c981dc-a67b-41ad-a3ba-996d83680257
+GET https://gxo3wb7885.execute-api.eu-west-1.amazonaws.com/prod/spaces?id=86c981dc-a67b-41ad-a3ba-996d83680257
 
 ###
 
-PUT https://6c8qgv82l1.execute-api.eu-west-1.amazonaws.com/prod/spaces
+PUT https://gxo3wb7885.execute-api.eu-west-1.amazonaws.com/prod/spaces
 Content-Type: : application/json
+
+
+###
+DELETE https://gxo3wb7885.execute-api.eu-west-1.amazonaws.com/prod/spaces?id=02f0f5ed-f23b-4c2b-be19-9c982e07b417
+Content-Type: : application/json
+
+###
