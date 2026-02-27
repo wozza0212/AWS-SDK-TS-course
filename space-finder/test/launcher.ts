@@ -22,27 +22,26 @@ process.env.TABLE_NAME = "SpaceStack-06d1a6d078e1";
 //   {} as any,
 // );
 
+handler(
+  {
+    httpMethod: "POST",
+    body: JSON.stringify({
+      location: "Dublin Updated",
+    }),
+  } as any,
+  {} as any,
+).then((result) => {
+  console.log(result);
+});
+
 // handler(
 //   {
-//     httpMethod: "PUT",
+//     httpMethod: "DELETE",
 //     queryStringParameters: {
-//       id: "86c981dc-a67b-41ad-a3ba-996d83680257"
+//       id: "86c981dc-a67b-41ad-a3ba-996d83680257",
 //     },
-//     body: JSON.stringify({
-//       location: 'Dublin Updated'
-//     })
 //   } as any,
 //   {} as any,
 // );
-
-handler(
-  {
-    httpMethod: "DELETE",
-    queryStringParameters: {
-      id: "86c981dc-a67b-41ad-a3ba-996d83680257",
-    },
-  } as any,
-  {} as any,
-);
 
 //  ts-node test/launcher.ts

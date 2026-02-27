@@ -6,6 +6,7 @@ import {
 import { marshall } from "@aws-sdk/util-dynamodb";
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
 import { v4 } from "uuid";
+import validateAsSpaceEntry from "../shared/DataValidator";
 
 const postSpaces = async (
   event: APIGatewayProxyEvent,
@@ -14,6 +15,7 @@ const postSpaces = async (
   const randomId = v4();
   const item = JSON.parse(event.body);
   item.id = randomId;
+  validateAsSpaceEntry(item)
 
   const result = await ddbClient.send(
     new PutItemCommand({
