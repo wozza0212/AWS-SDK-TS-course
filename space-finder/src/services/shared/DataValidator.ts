@@ -5,6 +5,8 @@ export class MissingFieldError extends Error {
         super(`Value for ${missingField} expected`)
     }
 }
+export class JsonError extends Error {}
+
 
 const validateAsSpaceEntry = (arg: any) => {
     if((arg as SpaceEntry).location == undefined) {
